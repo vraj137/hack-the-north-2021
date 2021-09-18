@@ -85,6 +85,7 @@ const Navigation = () => {
                 <Stack.Screen options={{ headerShown: false }} name="Launch" component={LaunchScreen} />
                 <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
                 <Stack.Screen options={{ headerShown: false }} name="Main Page" component={MainPage} />
+                <Stack.Screen options={{ headerShown: false }} name="Email Signup" component={emailSignup} />
                 <Stack.Screen options={{ headerShown: false }} name="Email Signin" component={emailSignin} />
             </Stack.Navigator>
         </NavigationContainer>
