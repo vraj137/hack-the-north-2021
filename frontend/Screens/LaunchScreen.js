@@ -81,7 +81,7 @@ const Navigation = () => {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen options={{ headerShown: false }} name="Launch" component={LaunchScreen} />
-                <Stack.Screen options={{ headerShown: true }} name="Login" component={LoginScreen} />
+                <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
                 <Stack.Screen options={{ headerShown: true }} name="Main Page" component={MainPage} />
             </Stack.Navigator>
         </NavigationContainer>
