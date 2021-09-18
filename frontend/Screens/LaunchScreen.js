@@ -20,8 +20,8 @@ import emailSignin from '../Screens/emailSignin';
 const LaunchScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.top}>Name</Text>
-            <Text style={styles.headerText}>Pratice whenever you want.</Text>
+            <Text style={styles.top}>Fit-Freak</Text>
+            <Text style={styles.headerText}>Get A Jump On Your Day!</Text>
             <Image style={styles.resize} source={require('../Images/launch.png')} />
             <Pressable 
                 style={styles.button}
@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
     top: {
         fontSize: windowWidth * 0.04,
         paddingTop: windowHeight * 0.03,
-        color: "#9ca7b5"
+        color: "#9ca7b5",
+        bottom: 20
     },
     headerText: {
         width: '80%',
@@ -52,6 +53,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: "center",
         paddingBottom: windowHeight * 0.1268,
+        top: 20
     },
     resize: {
         width: windowWidth * 0.9227,

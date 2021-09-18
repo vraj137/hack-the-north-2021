@@ -20,7 +20,7 @@ const LoginScreen = ({ navigation }) => {
                     name='logo-apple'
                     size={windowDiagonal * 0.03233}
                 />
-                <Text style={{color: 'black', ...styles.buttonText}}>    Sign in with Apple</Text>
+                <Text style={{color: 'black', ...styles.buttonText}}> Sign in with Apple</Text>
             </Pressable>
             <Pressable 
                 style={styles.button}
@@ -29,7 +29,7 @@ const LoginScreen = ({ navigation }) => {
                     name='logo-google'
                     size={windowDiagonal * 0.03233}
                 />
-                <Text style={{color: 'blue', ...styles.buttonText}}>  Sign in with Google</Text>
+                <Text style={{color: 'blue', ...styles.buttonText}}> Sign in with Google</Text>
             </Pressable>
             <Pressable 
                 style={styles.button}
@@ -39,7 +39,7 @@ const LoginScreen = ({ navigation }) => {
                     name='mail-sharp'
                     size={windowDiagonal * 0.03233}
                 />
-                <Text style={{color: 'red', ...styles.buttonText}}>     Sign in with Email</Text>
+                <Text style={{color: 'red', ...styles.buttonText}}> Sign in with Email</Text>
             </Pressable>
             <View style={styles.signup}>
                 <Text style={styles.message}>Don't have an account?</Text>
@@ -51,7 +51,7 @@ const LoginScreen = ({ navigation }) => {
                 </Pressable>
             </View>
             <View style={styles.privacyMessage}>
-                <Text style={{color: 'black'}}>You're completely safe</Text>
+                <Text style={{color: 'black'}}>You're Completely Safe</Text>
                 <Text style={{color: '#7041EE', fontStyle: 'italic'}}>Read our terms and conditions</Text>
                 <Button title="Access to main page" onPress={() => {navigation.navigate('Main Page')}}/>
             </View>
