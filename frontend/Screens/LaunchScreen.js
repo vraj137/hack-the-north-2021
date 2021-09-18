@@ -14,6 +14,8 @@ const windowHeight = Dimensions.get('window').height;
 // Import screens
 import LoginScreen from '../Screens/LoginScreen';
 import MainPage from '../Screens/MainPage';
+import emailSignup from '../Screens/emailSignup';
+import emailSignin from '../Screens/emailSignin';
 
 const LaunchScreen = ({ navigation }) => {
     return (
@@ -82,7 +84,8 @@ const Navigation = () => {
             <Stack.Navigator>
                 <Stack.Screen options={{ headerShown: false }} name="Launch" component={LaunchScreen} />
                 <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
-                <Stack.Screen options={{ headerShown: true }} name="Main Page" component={MainPage} />
+                <Stack.Screen options={{ headerShown: false }} name="Main Page" component={MainPage} />
+                <Stack.Screen options={{ headerShown: false }} name="Email Signin" component={emailSignin} />
             </Stack.Navigator>
         </NavigationContainer>
     );

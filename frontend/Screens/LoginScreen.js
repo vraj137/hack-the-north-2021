@@ -33,6 +33,7 @@ const LoginScreen = ({ navigation }) => {
             </Pressable>
             <Pressable 
                 style={styles.button}
+                onPress={() => {navigation.navigate('Email Signin')}}
             >
                 <Icon
                     name='mail-sharp'
@@ -44,6 +45,7 @@ const LoginScreen = ({ navigation }) => {
                 <Text style={styles.message}>Don't have an account?</Text>
                 <Pressable 
                     style={styles.signupButton}
+                    onPress={() => {navigation.navigate('Email Signup')}}
                 >
                     <Text style={{color: 'white', ...styles.buttonText}}>Sign up</Text>
                 </Pressable>
@@ -59,7 +61,7 @@ const LoginScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#E5E5E5',
+        backgroundColor: '#e6eaf2',
         alignItems: 'center',
         flex: 1,
     },
