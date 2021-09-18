@@ -18,6 +18,7 @@ import MainPage from '../Screens/MainPage';
 const LaunchScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
+            <Text style={styles.top}>Name</Text>
             <Text style={styles.headerText}>Pratice whenever you want.</Text>
             <Image style={styles.resize} source={require('../Images/launch.png')} />
             <Pressable 
@@ -32,10 +33,15 @@ const LaunchScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#E5E5E5',
+        backgroundColor: '#d5e6ed',
         alignItems: 'center',
         flex: 1,
         justifyContent: 'center'
+    },
+    top: {
+        fontSize: windowWidth * 0.04,
+        paddingTop: windowHeight * 0.03,
+        color: "#9ca7b5"
     },
     headerText: {
         width: '80%',
@@ -44,7 +50,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: "center",
         paddingBottom: windowHeight * 0.1268,
-        // paddingTop: windowHeight * 0.1429,
     },
     resize: {
         width: windowWidth * 0.9227,
@@ -65,7 +70,7 @@ const styles = StyleSheet.create({
     buttonText: {
         fontSize: 16,
         lineHeight: 21,
-        fontWeight: 'bold',
+        fontWeight: '400',
         letterSpacing: 0.25,
         color: 'black',
     },
@@ -76,8 +81,8 @@ const Navigation = () => {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen options={{ headerShown: false }} name="Launch" component={LaunchScreen} />
-                <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
-                <Stack.Screen options={{ headerShown: false }} name="Main Page" component={MainPage} />
+                <Stack.Screen options={{ headerShown: true }} name="Login" component={LoginScreen} />
+                <Stack.Screen options={{ headerShown: true }} name="Main Page" component={MainPage} />
             </Stack.Navigator>
         </NavigationContainer>
     );
