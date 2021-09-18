@@ -10,10 +10,9 @@ const windowHeight = Dimensions.get('window').height;
 const MainPage = ({ navigation }) => {
     return (
         <View style={styles.container}>
+            <Button title="Access to friendly battle" onPress={() => {navigation.navigate('Friendly Battle')}}/>
             <Text style={styles.date}>{getCurrentDate()}</Text>
             <Text style={styles.top}>Hello Linh!</Text>
-
-            <Text></Text>
         </View>
     );
 }
@@ -41,7 +40,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     top: {
-        paddingTop: windowHeight * 0.03,
+        paddingTop: windowHeight * 0.1,
         bottom: 290,
     }
 });

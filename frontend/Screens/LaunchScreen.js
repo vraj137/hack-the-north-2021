@@ -16,6 +16,7 @@ import LoginScreen from '../Screens/LoginScreen';
 import MainPage from '../Screens/MainPage';
 import emailSignup from '../Screens/emailSignup';
 import emailSignin from '../Screens/emailSignin';
+import FriendlyBattle from '../Screens/FriendlyBattle';
 
 const LaunchScreen = ({ navigation }) => {
     return (
@@ -89,6 +90,7 @@ const Navigation = () => {
                 <Stack.Screen options={{ headerShown: false }} name="Main Page" component={MainPage} />
                 <Stack.Screen options={{ headerShown: false }} name="Email Signup" component={emailSignup} />
                 <Stack.Screen options={{ headerShown: false }} name="Email Signin" component={emailSignin} />
+                <Stack.Screen options={{ headerShown: false }} name="Friendly Battle" component={FriendlyBattle} />
             </Stack.Navigator>
         </NavigationContainer>
     );
