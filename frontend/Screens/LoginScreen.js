@@ -51,6 +51,7 @@ const LoginScreen = ({ navigation }) => {
             <View style={styles.privacyMessage}>
                 <Text style={{color: 'black'}}>You're completely safe</Text>
                 <Text style={{color: '#7041EE', fontStyle: 'italic'}}>Read our terms and conditions</Text>
+                <Button title="Access to main page" onPress={() => {navigation.navigate('Main Page')}}/>
             </View>
         </View>
     );
