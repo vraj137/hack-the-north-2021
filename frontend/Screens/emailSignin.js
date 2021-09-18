@@ -89,7 +89,6 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: windowHeight * 0.0524,
-        paddingTop: windowHeight * 0.115,
         paddingBottom: windowHeight * 0.0505,
         fontStyle: 'italic'
     },
