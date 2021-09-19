@@ -13,4 +13,5 @@ urlpatterns = [
     path('token/', views.CreateTokenView.as_view(), name='token'), 
     path('me/', views.ManageUserView.as_view(), name='me'),
     path('user-data/', views.UserDataView.as_view(), name='user-data'),
+    path('leaderboard/', views.UserLeaderBoardView.as_view(), name='leaderboard'),
 ]

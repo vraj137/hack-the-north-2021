@@ -27,4 +27,14 @@ class UserData(admin.ModelAdmin):
     ordering = ['id']
     list_display = ['user', 'steps', 'calories', 'points']
 
+#@admin.register(models.UserData)
+class UserLeaderBoardAdmin(admin.ModelAdmin):
+    ordering = ['id']
+    list_display = ['id',  'points', 'get_name']
+    def get_name(self, obj):
+        return obj.user.name
+    get_name.short_description = 'Name'
+    get_name.admin_order_field = 'user'
+
 admin.site.register(models.User, UserAdmin)
+# admin.site.register(models.UserData, UserLeaderBoardAdmin)

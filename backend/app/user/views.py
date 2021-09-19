@@ -1,6 +1,7 @@
-from .models import UserData
+from .models import UserData, User
 from rest_framework import generics,  authentication, permissions, serializers, viewsets
-from user.serializers import UserDataSerializer, UserSerializer, AuthTokenSerializer, UserDataSerializer 
+from user.serializers import UserDataSerializer, UserSerializer, AuthTokenSerializer, UserDataSerializer  \
+                                , UserLeaderBoardSerializer
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
 from rest_framework.response import Response
@@ -41,9 +42,20 @@ class UserDataView(APIView):
 
     def get(self, request, format=None):
         userId = self.request.user
-        print('THSISISISISIISI USER',userId)
+       # print('THSISISISISIISI USER',userId)
         queryset  = UserData.objects.get(user=userId)
-        print('NICEEEEEEEEEEEEEEEEEEE',queryset)
+        #print('NICEEEEEEEEEEEEEEEEEEE',queryset)
         serializer =  UserDataSerializer(queryset)
-        print(serializer)
+        #print(serializer)
+        return Response(serializer.data)
+
+class UserLeaderBoardView(APIView):
+    """Listing Users... points"""
+    authentication_classes = (authentication.TokenAuthentication,)
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get(self, queryset, format=None):
+        queryset = UserData.objects.all().order_by('-points')
+        serializer = UserLeaderBoardSerializer(queryset, many=True)
+        print('wowowow', serializer)
         return Response(serializer.data)

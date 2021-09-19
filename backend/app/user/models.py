@@ -37,7 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     dateOfBirth = models.DateField(auto_now_add=False, auto_now=False, null=True)
     height      = models.FloatField(null=True)
     weight      = models.FloatField(null=True)
-    phone_no    = models.IntegerField(null=True)
+    phone_no    = models.BigIntegerField(null=True)
     is_active   = models.BooleanField(default=True)
     is_staff    = models.BooleanField(default=False)
 

@@ -1,7 +1,7 @@
 from django.contrib.auth import get_user_model, authenticate
 from django.utils.translation import ugettext_lazy as _ 
 from rest_framework import serializers
-from .models import UserData
+from .models import User, UserData
 
 class UserSerializer(serializers.ModelSerializer):
     """Serializer for the users object"""
@@ -72,3 +72,13 @@ class UserDataSerializer(serializers.ModelSerializer):
         model           = UserData
         fields          = ('id', 'steps', 'calories', 'points',)
         read_only_fields=('id',)
+
+
+class UserLeaderBoardSerializer(serializers.ModelSerializer):
+    """Serialzing all users points"""
+    user_name = serializers.CharField(source='user.name')
+    class Meta:
+        model = UserData
+        fields = ('id', 'user_name', 'points',)
+        read_only_fields=('id',)
+    
