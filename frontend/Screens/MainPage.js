@@ -12,7 +12,7 @@ const windowHeight = Dimensions.get('window').height;
 const windowDiagonal = Math.sqrt(Math.pow(windowHeight, 2) + Math.pow(windowWidth, 2));
 
 // Import screens
-import LeadershipBoard from '../Screens/LeadershipBoard';
+import LeaderBoard from './LeaderBoard';
 
 const MainPage = ({ navigation }) => {
 
@@ -200,10 +200,10 @@ function MyTabs() {
             }}
         />
         <Tab.Screen
-            name="Leadership Board"
-            component={LeadershipBoard}
+            name="Leaderboard"
+            component={LeaderBoard}
             options={{
-                tabBarLabel: 'Leadership',
+                tabBarLabel: 'Leaderboard',
                 tabBarIcon: ({ color }) => (
                     <MaterialCommunityIcons name="account" color={color} size={26} />
                 ),
