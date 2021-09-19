@@ -16,52 +16,52 @@ const LeaderBoard = ({ navigation }) => {
                 <View style={styles.ranking}>
                     <Text style={{marginLeft: windowWidth * 0.07}}>1st</Text>
                     <Text>               Linh Robertson</Text>
-                    <Text>               1248</Text>
+                    <Text>            1248</Text>
                 </View>
                 <View style={styles.ranking}>
                     <Text style={{marginLeft: windowWidth * 0.07}}>2nd</Text>
-                    <Text>               Arlene Webb</Text>
-                    <Text>                  1231</Text>
+                    <Text>              Arlene Webb</Text>
+                    <Text>                1231</Text>
                 </View>
                 <View style={styles.ranking}>
                     <Text style={{marginLeft: windowWidth * 0.07}}>3rd</Text>
                     <Text>               Jerome Warren</Text>
-                    <Text>              1194</Text>
+                    <Text>            1194</Text>
                 </View>
                 <View style={styles.ranking}>
                     <Text style={{marginLeft: windowWidth * 0.07}}>4th</Text>
                     <Text>               Greg McKinney</Text>
-                    <Text>              1163</Text>
+                    <Text>            1163</Text>
                 </View>
                 <View style={styles.ranking}>
                     <Text style={{marginLeft: windowWidth * 0.07}}>5th</Text>
                     <Text>               Victoria Bell</Text>
-                    <Text>                    1101</Text>
+                    <Text>                  1101</Text>
                 </View>
                 <View style={styles.ranking}>
                     <Text style={{marginLeft: windowWidth * 0.07}}>6th</Text>
                     <Text>               Leslie Howard</Text>
-                    <Text>                986</Text>
+                    <Text>              986</Text>
                 </View>
                 <View style={styles.ranking}>
                     <Text style={{marginLeft: windowWidth * 0.07}}>7th</Text>
                     <Text>               Francisco Flores</Text>
-                    <Text>            976</Text>
+                    <Text>           976</Text>
                 </View>
                 <View style={styles.ranking}>
                     <Text style={{marginLeft: windowWidth * 0.07}}>8th</Text>
                     <Text>               Aubrey Alexander</Text>
-                    <Text>          950</Text>
+                    <Text>        950</Text>
                 </View>
                 <View style={styles.ranking}>
                     <Text style={{marginLeft: windowWidth * 0.07}}>9th</Text>
                     <Text>               Guy Watson</Text>
-                    <Text>                   942</Text>
+                    <Text>                 942</Text>
                 </View>
                 <View style={styles.ranking}>
                     <Text style={{marginLeft: windowWidth * 0.07}}>10th</Text>
                     <Text>               Tanya Mccoy</Text>
-                    <Text>                941</Text>
+                    <Text>               941</Text>
                 </View>
                 <Text></Text>
                 <Text></Text>
