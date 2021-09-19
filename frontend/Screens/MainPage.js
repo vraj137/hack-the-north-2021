@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     top: {
-        marginTop: windowHeight * 0.05,
+        marginTop: windowHeight * 0.1,
         flex: 2,
         flexDirection: 'row',
         flexWrap: 'wrap',
@@ -129,10 +129,11 @@ const styles = StyleSheet.create({
     plan: {
         backgroundColor: '#ffe5de',
         marginTop: windowHeight * 0.02,
+        marginBottom: windowHeight * 0.05,
         alignItems: 'center',
         justifyContent: 'center',
-        height: windowHeight * 0.3,
-        width: windowWidth * 0.75,
+        height: windowHeight * 0.25,
+        width: windowWidth * 0.9,
         borderRadius: 50,
     },
     plan1: {
