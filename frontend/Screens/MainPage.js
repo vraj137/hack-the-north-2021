@@ -1,6 +1,6 @@
 // Import Modules
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, Text, View, Dimensions, Image, Button, Pressable, ScrollView } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -9,11 +9,16 @@ const Tab = createMaterialBottomTabNavigator();
 // Get window dimensions
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
+const windowDiagonal = Math.sqrt(Math.pow(windowHeight, 2) + Math.pow(windowWidth, 2));
 
 // Import screens
 import LeadershipBoard from '../Screens/LeadershipBoard';
 
 const MainPage = ({ navigation }) => {
+
+    // State variables
+    const [workout, setWorkout] = useState([1, 'Body Weight']);
+
     return (
         <ScrollView>
             <View style={styles.container}>
@@ -45,6 +50,21 @@ const MainPage = ({ navigation }) => {
                     <View>
                         <Text style={styles.label1}>1248</Text>
                         <Text style={{color: '#7F7F7F', ...styles.label1}}>Points</Text>
+                    </View>
+                </View>
+                <Text style={styles.label2}>My Plan</Text>
+                <View style={styles.plan}>
+                    <View style={styles.plan1}>
+                        <Image style={styles.resize1} source={require('../Images/power.png')} />
+                        <View>
+                            <Text style={{marginLeft: windowWidth * 0.1, ...styles.text1}}>Week {workout[0]}</Text>
+                            <Text style={{marginLeft: windowWidth * 0.1, ...styles.text2}}>{workout[1]}</Text>
+                            <Text style={{marginLeft: windowWidth * 0.1, ...styles.text3}}>Workout {workout[0]} of 5</Text>
+                        </View>
+                    </View>
+                    <View style={styles.plan2}>
+                        <Text style={styles.text1}>Next exercise:</Text>
+                        <Text style={styles.text3}>Week {workout[0] + 1}: {workout[1]}</Text>
                     </View>
                 </View>
             </View>
@@ -101,6 +121,35 @@ const styles = StyleSheet.create({
         fontSize: windowWidth * 0.045,
         fontStyle: 'italic',
     },
+    label2: {
+        marginTop: windowHeight * 0.07,
+        fontSize: windowWidth * 0.045,
+        fontStyle: 'italic',
+    },
+    plan: {
+        backgroundColor: '#ffe5de',
+        marginTop: windowHeight * 0.02,
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: windowHeight * 0.3,
+        width: windowWidth * 0.75,
+        borderRadius: 50,
+    },
+    plan1: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center'
+    },
+    plan2: {
+        backgroundColor: 'white',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: windowHeight * 0.1,
+        width: windowWidth * 0.65,
+        borderRadius: 50,
+        marginBottom: windowHeight * 0.02,
+    },
     resize: {
         width: windowWidth * 0.2,
         height: windowWidth * 0.2,
@@ -115,6 +164,21 @@ const styles = StyleSheet.create({
         flex: 3,
         flexDirection: 'row',
         marginTop: windowHeight * 0.07
+    },
+    text1: {
+        fontSize: windowDiagonal * 0.02,
+        color: '#7F7F7F',
+        fontStyle: 'italic'
+    },
+    text2: {
+        fontSize: windowDiagonal * 0.025,
+        color: 'black',
+        fontStyle: 'italic'
+    },
+    text3: {
+        fontSize: windowDiagonal * 0.02,
+        color: 'black',
+        fontStyle: 'italic'
     }
 });
 
