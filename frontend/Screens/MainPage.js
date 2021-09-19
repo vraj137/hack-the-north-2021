@@ -31,7 +31,7 @@ const MainPage = ({ navigation }) => {
                     <Pressable
                         onPress={() => {navigation.navigate('Friendly Battle')}}
                     >
-                        <Image style={styles.resize1} source={require('../Images/blue.png')} />
+                        <Image style={styles.resize1} source={require('../Images/videoGame.png')} />
                     </Pressable>
                 </View>
                 <View style={styles.calories}>
@@ -152,14 +152,14 @@ const styles = StyleSheet.create({
         marginBottom: windowHeight * 0.02,
     },
     resize: {
-        width: windowWidth * 0.2,
-        height: windowWidth * 0.2,
+        width: windowWidth * 0.15,
+        height: windowWidth * 0.15,
         borderRadius: 100
     },
     resize1: {
-        width: windowWidth * 0.16,
-        height: windowWidth * 0.16,
-        borderRadius: 100
+        width: 60,
+        height: 50,
+        borderRadius: 0
     },
     statistics: {
         flex: 3,
