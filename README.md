@@ -1,4 +1,4 @@
-# Hack-The-North-2021
+# Hack The North 2021
 
 ## Inspiration 🪄
 COVID-19 has impacted us physically and mentally, leaving us to gain a few pounds or even lead to depression. Many individuals are even scared to enter gym facilities again as it contains a greater risk of getting infected. Even after the lockdown, a survey finds Two-thirds of gym members have paused or canceled their fitness contracts (Pat Foran, 2021). We wanted to create an app that eliminates this problem and helps individuals stay fit and healthy from practically anywhere.
