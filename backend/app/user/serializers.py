@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model, authenticate
 from django.utils.translation import ugettext_lazy as _ 
 from rest_framework import serializers
+from .models import UserData
 
 class UserSerializer(serializers.ModelSerializer):
     """Serializer for the users object"""
@@ -12,8 +13,10 @@ class UserSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         """Create a new user with encrypted password and return it"""
-        return get_user_model().objects.create_user(**validated_data)    
+        return get_user_model().objects.create_user(**validated_data)  
 
+    def create_superuser(self, validated_data):
+        return get_user_model().objects.create_superuser(**validated_data)  
 
     def update(self, instance, validated_data):
         """Update a user, setting the password correctly and return it"""
@@ -25,6 +28,16 @@ class UserSerializer(serializers.ModelSerializer):
             user.save()
 
         return user
+
+
+# class AdminUserSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = get_user_model()
+#         fields = ('email', 'password','name', "dateOfBirth", "phone_no", "height", "weight",)
+#         extra_kwargs = {'password': {'write_only':True, 'min_length':5}}
+    
+#     def create_superuser(self, validated_data):
+#         return get_user_model().objects.create_superuser(**validated_data)  
 
 
 class AuthTokenSerializer(serializers.Serializer):
@@ -51,4 +64,11 @@ class AuthTokenSerializer(serializers.Serializer):
 
         attrs['user'] = user 
         return attrs  
-    
+
+
+class UserDataSerializer(serializers.ModelSerializer):
+    """Serializing the User Data"""
+    class Meta:
+        model           = UserData
+        fields          = ('id', 'steps', 'calories', 'points',)
+        read_only_fields=('id',)

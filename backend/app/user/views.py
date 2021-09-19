@@ -1,13 +1,20 @@
-from rest_framework import generics,  authentication, permissions, viewsets
-from user.serializers import UserSerializer, AuthTokenSerializer
+from .models import UserData
+from rest_framework import generics,  authentication, permissions, serializers, viewsets
+from user.serializers import UserDataSerializer, UserSerializer, AuthTokenSerializer, UserDataSerializer 
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
 from rest_framework.response import Response
+from rest_framework.views import APIView
 
 
 class CreateUserView(generics.CreateAPIView):
     """Create a new user in the system"""
     serializer_class = UserSerializer
+
+
+# class CreateAdminUserView(generics.CreateAPIView):
+#     """Create a new user in the system"""
+#     serializer_class = AdminUserSerializer
 
 
 class CreateTokenView(ObtainAuthToken):
@@ -25,3 +32,18 @@ class ManageUserView(generics.RetrieveUpdateAPIView):
 
     def get_object(self):
         return self.request.user
+
+
+class UserDataView(APIView):
+    """View for UserData"""
+    authentication_classes = (authentication.TokenAuthentication,)
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get(self, request, format=None):
+        userId = self.request.user
+        print('THSISISISISIISI USER',userId)
+        queryset  = UserData.objects.get(user=userId)
+        print('NICEEEEEEEEEEEEEEEEEEE',queryset)
+        serializer =  UserDataSerializer(queryset)
+        print(serializer)
+        return Response(serializer.data)

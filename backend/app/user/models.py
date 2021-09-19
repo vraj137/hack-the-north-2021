@@ -33,12 +33,25 @@ class User(AbstractBaseUser, PermissionsMixin):
     of username
     """
     email       = models.EmailField(max_length=255, unique=True)
-    name        = models.CharField(max_length=255)
-    dateOfBirth = models.DateField(auto_now_add=False, auto_now=False)
-    height      = models.FloatField()
-    weight      = models.FloatField()
-    phone_no    = models.IntegerField()
+    name        = models.CharField(max_length=255, null=True)
+    dateOfBirth = models.DateField(auto_now_add=False, auto_now=False, null=True)
+    height      = models.FloatField(null=True)
+    weight      = models.FloatField(null=True)
+    phone_no    = models.IntegerField(null=True)
+    is_active   = models.BooleanField(default=True)
+    is_staff    = models.BooleanField(default=False)
 
     objects = UserManager()
 
     USERNAME_FIELD = 'email' 
+
+
+class UserData(models.Model):
+    user        = models.ForeignKey(User, related_name='user_info', on_delete=models.CASCADE)
+    steps       = models.IntegerField(default=0)
+    calories    = models.FloatField(default=0)
+    points      = models.IntegerField(default=0)
+
+    def __str__(self):
+        return str(self.user) 
+    
