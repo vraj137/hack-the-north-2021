@@ -1,1 +1,3 @@
-**/backend/rest/*
+.env
+rest/*
+__pycache__
