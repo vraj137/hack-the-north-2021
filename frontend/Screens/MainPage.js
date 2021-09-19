@@ -2,10 +2,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Dimensions, Image, Button, Pressable, ScrollView } from 'react-native';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+const Tab = createMaterialBottomTabNavigator();
 
 // Get window dimensions
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
+
+// Import screens
+import LeadershipBoard from '../Screens/LeadershipBoard';
 
 const MainPage = ({ navigation }) => {
     return (
@@ -17,7 +23,11 @@ const MainPage = ({ navigation }) => {
                         <Text style={{color: '#7F7F7F', fontSize: windowWidth * 0.045}}>Hello Linh!</Text>
                         <Text style={{color: 'black', fontSize: windowWidth * 0.04}}>{getCurrentDate()}</Text>
                     </View>
-                    <Image style={styles.resize1} source={require('../Images/blue.png')} />
+                    <Pressable
+                        onPress={() => {navigation.navigate('Friendly Battle')}}
+                    >
+                        <Image style={styles.resize1} source={require('../Images/blue.png')} />
+                    </Pressable>
                 </View>
                 <View style={styles.calories}>
                     <Text style={{color: 'black', fontSize: windowWidth * 0.115, fontStyle: 'italic'}}>1 883 kcal</Text>
@@ -108,9 +118,38 @@ const styles = StyleSheet.create({
     }
 });
 
+function MyTabs() {
+    return (
+      <Tab.Navigator
+        initialRouteName="Main"
+        activeColor="#e91e63"
+        barStyle={{ backgroundColor: '#373856' }}
+      >
+        <Tab.Screen 
+            name="Main" 
+            component={MainPage} 
+            options={{
+                tabBarLabel: 'Main',
+                tabBarIcon: ({ color }) => (
+                  <MaterialCommunityIcons name="home" color={color} size={26} />
+                ),
+            }}
+        />
+        <Tab.Screen
+            name="Leadership Board"
+            component={LeadershipBoard}
+            options={{
+                tabBarLabel: 'Leadership',
+                tabBarIcon: ({ color }) => (
+                    <MaterialCommunityIcons name="account" color={color} size={26} />
+                ),
+            }}
+        />
+      </Tab.Navigator>
+    );
+}
 
-
-export default MainPage;
+export default MyTabs;
 
 /*
 From Figma demo phone:
