@@ -20,3 +20,5 @@ We all wanted to create something that wasn't simple which meant doing something
 
 ## What's Next for Fitness Freak ‼️
 This is just the beginning, soon Fitness Freak will create a platform where users are also allowed to video chat and message friends regarding their health goals and challenges to play. As for video chat, it will be a platform allowing users to challenge their friends to a friendly battle where the AI will scan for users' bodies during each push-up and give points when each posture is done correctly.
+
+### By: Vraj Bhavsar, Taoguang Xing, and Rahul Negi
